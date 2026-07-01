@@ -32,5 +32,10 @@
     }
   ],
   "prefix": "󱍢 ",
+  "motd": {
+    "commands": [
+      "umotd"
+    ]
+  },
   "use-accent-color": true
 }

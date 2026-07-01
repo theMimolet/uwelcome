@@ -7,7 +7,7 @@
 *.dll
 *.so
 *.dylib
-umotd*
+uwelcome*
 
 # Test binary, built with `go test -c`
 *.test

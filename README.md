@@ -12,6 +12,7 @@
 
 Here are features that are planned for the future:
 
+- Add CLI commands to customize the banner without touching the config file itself
 - Shows a warning if the installed system image is over a certain amount of time (e.g. one month - configurable)
 - Shows a warning if the installed system image is unverified (could be disabled via configuration)
 
@@ -19,14 +20,14 @@ Here are features that are planned for the future:
 
 ## How to try
 
-### Install it with Homebrew
+<!-- ### Install it with Homebrew
 
 If you have Homebrew installed on your system, you can install uWelcome with the following command:
 ```
 brew install themimolet/tap/uwelcome
 ```
 
-It's the recommended way to install uWelcome on your system, as it will automatically update via Homebrew.
+It's the recommended way to install uWelcome on your system, as it will automatically update via Homebrew. -->
 
 ### Download it from the releases page
 
