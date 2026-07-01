@@ -1,0 +1,36 @@
+{
+  "commands": [
+    {
+      "cmd": "ujust --choose",
+      "desc": "cmd_list"
+    },
+    {
+      "cmd": "uwelcome toggle",
+      "desc": "banner_toggle"
+    },
+    {
+      "cmd": "ujust bluefin-cli",
+      "desc": "term_bling"
+    },
+    {
+      "cmd": "brew help",
+      "desc": "cli_pkg"
+    }
+  ],
+  "links": [
+    {
+      "name": "issues",
+      "url": "https://issues.projectbluefin.io/"
+    },
+    {
+      "name": "Ask Bluefin",
+      "url": "https://ask.projectbluefin.io/"
+    },
+    {
+      "name": "docs",
+      "url": "https://docs.projectbluefin.io/"
+    }
+  ],
+  "prefix": "󱍢 ",
+  "use-accent-color": true
+}
