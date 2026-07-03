@@ -56,14 +56,14 @@ func main() {
 				state.Enable(l)
 				return
 			} else {
-				fmt.Println(l.Get("Uwelcome is already enabled."))
+				fmt.Println(l.Get("The banner is already enabled."))
 				return
 			}
 
 		// Disables the banner
 		case "disable":
 			if isDisabled {
-				fmt.Println(l.Get("Uwelcome is already disabled."))
+				fmt.Println(l.Get("The banner is already disabled."))
 				return
 			} else {
 				state.Disable(l)

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: unnamed project\n"
-"PO-Revision-Date: 2026-07-01 18:30+0200\n"
+"PO-Revision-Date: 2026-07-03 15:26+0200\n"
 "Last-Translator: Mimolet <themimolet@proton.me>\n"
 "Language-Team: French <>\n"
 "Language: fr\n"
@@ -50,17 +50,18 @@ msgstr "Faire un don"
 msgid "Enable terminal bling"
 msgstr "Active le bling du terminal"
 
-#: internal/state/state.go:23 internal/state/state.go:33
+#: internal/state/state.go:24 internal/state/state.go:34
+#: internal/state/state.go:40
 msgid "Error ~> %s"
 msgstr "Erreur ~> %s"
 
-#: internal/state/state.go:32
-msgid "Failed to disable uwelcome."
-msgstr "Échec de la désactivation de uwelcome."
+#: internal/state/state.go:33 internal/state/state.go:39
+msgid "Failed to disable the banner."
+msgstr "Échec de la désactivation de la bannière."
 
-#: internal/state/state.go:22
-msgid "Failed to enable uwelcome."
-msgstr "Échec de l'activation de uwelcome."
+#: internal/state/state.go:23
+msgid "Failed to enable the banner."
+msgstr "Échec de l'activation de la bannière."
 
 #: main.go:102
 msgid "Healthy"
@@ -94,6 +95,22 @@ msgstr "Matrix"
 msgid "Report an issue"
 msgstr "Signaler un problème"
 
+#: internal/state/state.go:43
+msgid "The banner has been disabled."
+msgstr "La bannière a été désactivé."
+
+#: internal/state/state.go:27
+msgid "The banner has been enabled."
+msgstr "La bannière a été activé."
+
+#: main.go:66
+msgid "The banner is already disabled."
+msgstr "La bannière est déjà désactivée."
+
+#: main.go:59
+msgid "The banner is already enabled."
+msgstr "La bannière est déjà activée."
+
 #: main.go:123
 msgid "Toggle this banner on/off"
 msgstr "Active/désactive ce panneau"
@@ -101,22 +118,6 @@ msgstr "Active/désactive ce panneau"
 #: main.go:95
 msgid "Unknown system"
 msgstr "Système inconnu"
-
-#: internal/state/state.go:36
-msgid "Uwelcome has been disabled."
-msgstr "Uwelcome a été désactivé."
-
-#: internal/state/state.go:26
-msgid "Uwelcome has been enabled."
-msgstr "Uwelcome a été activé."
-
-#: main.go:66
-msgid "Uwelcome is already disabled."
-msgstr "Uwelcome est déjà désactivé."
-
-#: main.go:59
-msgid "Uwelcome is already enabled."
-msgstr "Uwelcome est déjà activé."
 
 #: main.go:125
 msgid "View system information"
@@ -130,8 +131,17 @@ msgstr "Site Web"
 msgid "Welcome to %s"
 msgstr "Bienvenue sur %s"
 
-#~ msgid "Failed to disable the banner."
-#~ msgstr "Échec de la désactivation de la bannière."
+#~ msgid "Uwelcome is already disabled."
+#~ msgstr "Uwelcome est déjà désactivé."
+
+#~ msgid "Uwelcome is already enabled."
+#~ msgstr "Uwelcome est déjà activé."
+
+#~ msgid "Failed to disable uwelcome."
+#~ msgstr "Échec de la désactivation de uwelcome."
+
+#~ msgid "Failed to enable uwelcome."
+#~ msgstr "Échec de l'activation de uwelcome."
 
 #~ msgid ""
 #~ "%s The Steam game mode updater also updates Bazzite, Flatpak apps, and "
