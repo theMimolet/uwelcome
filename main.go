@@ -119,7 +119,7 @@ func main() {
 				cmd.Desc = l.Get("Manage command line packages")
 			case "term_bling":
 				cmd.Desc = l.Get("Enable terminal bling")
-			case "motd_toggle":
+			case "banner_toggle":
 				cmd.Desc = l.Get("Toggle this banner on/off")
 			case "sys_info":
 				cmd.Desc = l.Get("View system information")

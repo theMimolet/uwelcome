@@ -40,5 +40,6 @@
     "commands": [
       "umotd"
     ]
-  }
+  },
+  "use-accent-color": true
 }
