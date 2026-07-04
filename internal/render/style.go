@@ -34,7 +34,7 @@ var colorTheme = map[string]map[string]string{
 
 func getColorTheme() map[string]string {
 	defaultColorTheme := colorTheme["blue"]
-	cmd := exec.Command("gsettings", "get", "org.gnome.desktop.interface", "accent-color")
+	cmd := exec.Command("dconf", "read", "/org/gnome/desktop/interface/accent-color")
 	output, err := cmd.Output()
 	if err != nil {
 		return defaultColorTheme
