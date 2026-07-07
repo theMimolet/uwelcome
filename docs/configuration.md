@@ -6,7 +6,7 @@ If you're managing a custom system, it might interest you.
 
 ## Where to put your config
 
-You can create a custom config file at `/etc/uWelcome/config.json` (system-wide) or `~/.config/uWelcome/config.json` (user-specific).
+You can create a custom config file at `/etc/uwelcome/config.json` (system-wide) or `~/.config/uwelcome/config.json` (user-specific).
 
 ## Translations ?!
 
@@ -28,7 +28,7 @@ Here are the unique codes you can use to get translated strings for command desc
 - `cmd_list`: "List of available commands"
 - `cli_pkg`: "Manage command line packages"
 - `term_bling`: "Enable terminal bling"
-- `banner_toggle`: "Toggle this banner on/off" (there are no built-in commands for this)
+- `banner_toggle`: "Toggle this banner on/off" (there are built-in commands for this)
 - `sys_info`: "View system info"
 - `man_upd`: "Manually update the system"
 
@@ -36,8 +36,8 @@ Here are the unique codes you can use to get translated strings for command desc
 {
   "commands": [
     {
-      "cmd": "ujust aurora-cli",
-      "desc": "term_bling"
+      "cmd": "uwelcome toggle",
+      "desc": "banner_toggle"
     },
     {
       "cmd": "fastfetch",
@@ -57,7 +57,7 @@ Here are the unique codes you can use to get translated strings for command desc
 
 ## Links
 
-This option allows to add custom links to the MOTD.
+This option allows to add custom links to the banner.
 
 There are unique names you can use to get a translated name for the link :
 
@@ -142,7 +142,7 @@ They will get chosen at random and can both be straight up messages or the resul
 
 This option allows umotd to use the accent color of the system.
 
-> Note: It's only available for the GNOME desktop as it relies on `gsettings`.
+> Note: It's only available for the GNOME desktop as it relies on `dconf`.
 
 ```json
 {
