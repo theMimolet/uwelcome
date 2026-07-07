@@ -10,7 +10,6 @@ import (
 
 type Config struct {
 	Commands       []Command `json:"commands"`
-	InfoFile       string    `json:"info-file"`
 	Links          []Link    `json:"links"`
 	Prefix         string    `json:"prefix"`
 	Suffix         string    `json:"suffix"`
