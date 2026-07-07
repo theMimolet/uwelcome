@@ -21,7 +21,7 @@ Here's a breakdown of the config file options - there's also the example folder 
 
 ## Commands
 
-This option allows you to define a list of commands to display in the MOTD.
+This option allows you to define a list of commands to display in the banner.
 
 Here are the unique codes you can use to get translated strings for command descriptions : 
 
@@ -140,7 +140,7 @@ They will get chosen at random and can both be straight up messages or the resul
 
 ## Use Accent Color
 
-This option allows umotd to use the accent color of the system.
+This option allows the banner to use the accent color of the system.
 
 > Note: It's only available for the GNOME desktop as it relies on `dconf`.
 

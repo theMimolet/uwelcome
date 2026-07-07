@@ -28,11 +28,11 @@ Finally, use your favorite po editor to translate the strings in the `.po` file 
 You can then use `LANGUAGE=<language code>` in front of the usual command to test your translation, like this:
 
 ```sh
-# Run with the compiled binary - needs to be rebuilt after translation changes
+# Run with the compiled binary -> needs to be rebuilt after translation changes
 LANGUAGE=fr ./uwelcome
 ```
 
 ```sh
-# Run with the source code - not compiled, so no need to rebuild after translation changes
+# Run with the source code -> not compiled, you can just run it after translation changes
 LANGUAGE=fr go run .
 ```
