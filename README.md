@@ -12,6 +12,7 @@
 
 Here are features that are planned for the future:
 
+- Possibility to customize the colors without having relying on the desktop's accent colors
 - Add CLI commands to customize the banner without touching the config file itself
 - Shows a warning if the installed system image is over a certain amount of time (e.g. one month - configurable)
 - Shows a warning if the installed system image is unverified (could be disabled via configuration)
