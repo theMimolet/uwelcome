@@ -14,11 +14,10 @@ import (
 	"uwelcome/internal/symbols"
 	"uwelcome/internal/system"
 
-	"charm.land/glamour/v2"
 	"github.com/leonelquinteros/gotext"
 )
 
-const VERSION = "0.3"
+const VERSION = "0.3.1"
 
 //go:embed all:locales
 var localesFS embed.FS
@@ -171,18 +170,6 @@ func main() {
 		in += "\n"
 	}
 
-	var out string
-
-	colorScheme := render.DetectTheme()
-	if cfg.UseAccentColor && system.GetDesktop() == "GNOME" {
-		r, _ := glamour.NewTermRenderer(
-			glamour.WithStyles(render.GetAccentStyle()),
-		)
-		out, _ = r.Render(in)
-	} else {
-		out, _ = glamour.Render(in, colorScheme)
-	}
-
 	// Renders the output
-	fmt.Print(out)
+	fmt.Print(render.GetRender(cfg.Color, in))
 }

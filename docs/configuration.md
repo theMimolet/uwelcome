@@ -8,7 +8,7 @@ If you're managing a custom system, it might interest you.
 
 You can create a custom config file at `/etc/uwelcome/config.json` (system-wide) or `~/.config/uwelcome/config.json` (user-specific).
 
-## Translations ?!
+## Translations ?
 
 uWelcome supports translations for its interface, as well as for some command descriptions and link names.
 They have specific names / codes that are used to get translated strings.
@@ -23,7 +23,7 @@ Here's a breakdown of the config file options - there's also the example folder 
 
 This option allows you to define a list of commands to display in the banner.
 
-Here are the unique codes you can use to get translated strings for command descriptions : 
+Here are the unique codes you can use to get translated strings for command descriptions :
 
 - `cmd_list`: "List of available commands"
 - `cli_pkg`: "Manage command line packages"
@@ -115,8 +115,8 @@ These options allow to customize the prefix and suffix of the welcome message.
 
 Example:
 
-```
-`> Welcome to Bluefin !`
+```txt
+> Welcome to Bluefin !
 ```
 
 ## Motd
@@ -138,14 +138,30 @@ They will get chosen at random and can both be straight up messages or the resul
 }
 ```
 
-## Use Accent Color
+## Color
 
-This option allows the banner to use the accent color of the system.
+This option allows the banner to use an accent color.
+
+Not setting this option or setting it to something other than the options below will result in the banner using the default colors.
+
+Here are all the different options:
+
+- `auto` : Sets the color automatically to the accent theme.
 
 > Note: It's only available for the GNOME desktop as it relies on `dconf`.
 
+- `blue`
+- `green`
+- `orange`
+- `pink`
+- `puple`
+- `red`
+- `slate`
+- `teal`
+- `yellow`
+
 ```json
 {
-  "use-accent-color": true
+  "color": "orange"
 }
 ```

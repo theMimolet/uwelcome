@@ -55,7 +55,7 @@ func queryTerminalBackground() string {
 	return "light"
 }
 
-func DetectTheme() string {
+func detectTheme() string {
 
 	if s := os.Getenv("GLAMOUR_STYLE"); s == "light" || s == "dark" {
 		return s

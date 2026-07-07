@@ -41,5 +41,5 @@
       "umotd"
     ]
   },
-  "use-accent-color": true
+  "color": "auto"
 }

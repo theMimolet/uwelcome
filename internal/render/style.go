@@ -4,23 +4,46 @@ import (
 	"os/exec"
 	"strings"
 
+	"charm.land/glamour/v2"
 	"charm.land/glamour/v2/ansi"
 )
 
 const defaultMargin uint = 2
 
-//go:fix inline
 func stringPtr(s string) *string { return new(s) }
+func boolPtr(b bool) *bool       { return new(b) }
+func uintPtr(u uint) *uint       { return new(u) }
 
-//go:fix inline
-func boolPtr(b bool) *bool { return new(b) }
+func GetRender(color string, input string) string {
+	var withColor bool = true
+	var processColor map[string]string
+	var out string
 
-//go:fix inline
-func uintPtr(u uint) *uint { return new(u) }
+	switch color {
+	case "auto":
+		processColor = getAccentColor()
+	case "blue", "green", "orange", "pink", "purple", "red", "slate", "teal", "yellow":
+		processColor = colorMap[color]
+	default:
+		withColor = false
+	}
+
+	if !withColor {
+		colorScheme := detectTheme()
+		out, _ = glamour.Render(input, colorScheme)
+	} else {
+		r, _ := glamour.NewTermRenderer(
+			glamour.WithStyles(getColorizedStyle(processColor)),
+		)
+		out, _ = r.Render(input)
+	}
+
+	return out
+}
 
 // The colors are ANSI color codes (ANSI 256 - https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
 
-var colorTheme = map[string]map[string]string{
+var colorMap = map[string]map[string]string{
 	"blue":   {"accent": "33", "link": "69"},
 	"green":  {"accent": "34", "link": "28"},
 	"orange": {"accent": "208", "link": "130"},
@@ -32,24 +55,23 @@ var colorTheme = map[string]map[string]string{
 	"yellow": {"accent": "220", "link": "178"},
 }
 
-func getColorTheme() map[string]string {
-	defaultColorTheme := colorTheme["blue"]
+func getAccentColor() map[string]string {
+	defaultColorTheme := colorMap["blue"]
 	cmd := exec.Command("dconf", "read", "/org/gnome/desktop/interface/accent-color")
 	output, err := cmd.Output()
 	if err != nil {
 		return defaultColorTheme
 	}
 	accent := strings.Trim(strings.TrimSpace(string(output)), "'")
-	if color, ok := colorTheme[accent]; ok {
+	if color, ok := colorMap[accent]; ok {
 		return color
 	}
 	return defaultColorTheme
 }
 
-func GetAccentStyle() ansi.StyleConfig {
-	theme := getColorTheme()
-	accent := theme["accent"]
-	link := theme["link"]
+func getColorizedStyle(color map[string]string) ansi.StyleConfig {
+	accent := color["accent"]
+	link := color["link"]
 
 	return ansi.StyleConfig{
 		Document: ansi.StyleBlock{

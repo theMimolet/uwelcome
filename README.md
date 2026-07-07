@@ -4,15 +4,14 @@
 
 **WIP**: Some features still need testing.
 
-**Contributions are welcome!** If you want to contribute, you're welcome to submit a pull request or open an issue - it's very much appreciated ❤️
+**Contributions are welcome!** If you want to contribute, you're welcome to submit a pull request or [open an issue](https://github.com/theMimolet/uwelcome/issues) - it's very much appreciated ❤️
 
-[Access the documentation](https://github.com/theMimolet/uwelcome/tree/main/docs)
+Want to configure or contribute to uWelcome ? Take a look at the [documentation](https://github.com/theMimolet/uwelcome/tree/main/docs) !
 
 ## Roadmap
 
 Here are features that are planned for the future:
 
-- Possibility to customize the colors without having relying on the desktop's accent colors
 - Add CLI commands to customize the banner without touching the config file itself
 - Shows a warning if the installed system image is over a certain amount of time (e.g. one month - configurable)
 - Shows a warning if the installed system image is unverified (could be disabled via configuration)
@@ -21,14 +20,15 @@ Here are features that are planned for the future:
 
 ## How to try
 
-<!-- ### Install it with Homebrew
+### Install it with Homebrew
 
 If you have Homebrew installed on your system, you can install uWelcome with the following command:
-```
+
+```sh
 brew install themimolet/tap/uwelcome
 ```
 
-It's the recommended way to install uWelcome on your system, as it will automatically update via Homebrew. -->
+It's the recommended way to install uWelcome on your system, as it will get updated via Homebrew.
 
 ### Download it from the releases page
 
@@ -43,7 +43,8 @@ You can then rename it to `uwelcome` and place it in your usual `/bin` folder.
 You'll need to have [`go`](https://repology.org/project/go/versions) installed on your system to compile uWelcome from source.
 
 Then you'll have to simply clone the repository and then build the binary:
-```
+
+```sh
 git clone https://github.com/theMimolet/uwelcome
 cd uwelcome
 go build
@@ -54,9 +55,11 @@ You'll then have the `uwelcome` binary in the current directory, which you can j
 
 ## Commands
 
-uWelcome supports the following commands:
+uWelcome supports the following commands (for now):
 
-- `toggle`: toggles the MOTD on or off for the current user
-- `enable`: always enables the MOTD for the current user
-- `disable`: always disables the MOTD for the current user
-- `version`, `--version`, `-v`: displays the version of uWelcome you're currently using
+```txt
+toggle  - Toggles the MOTD on or off for the current user
+enable  - Always enables the MOTD for the current user
+disable - Always disables the MOTD for the current user
+version - Displays the version of uWelcome currently in use
+```

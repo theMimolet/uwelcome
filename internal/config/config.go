@@ -9,12 +9,12 @@ import (
 )
 
 type Config struct {
-	Commands       []Command `json:"commands"`
-	Links          []Link    `json:"links"`
-	Prefix         string    `json:"prefix"`
-	Suffix         string    `json:"suffix"`
-	Motd           Motd      `json:"motd"`
-	UseAccentColor bool      `json:"use-accent-color"`
+	Commands []Command `json:"commands"`
+	Links    []Link    `json:"links"`
+	Prefix   string    `json:"prefix"`
+	Suffix   string    `json:"suffix"`
+	Motd     Motd      `json:"motd"`
+	Color    string    `json:"color"`
 }
 
 type Command struct {
