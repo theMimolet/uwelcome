@@ -16,7 +16,7 @@ type ImageInfo struct {
 func GetDesktop() string {
 	desktop := os.Getenv("XDG_CURRENT_DESKTOP")
 	if desktop == "" {
-		return "Unknown desktop"
+		return "Unknown"
 	}
 	return desktop
 }
