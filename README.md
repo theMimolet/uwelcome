@@ -61,3 +61,11 @@ enable  - Always enables the MOTD for the current user
 disable - Always disables the MOTD for the current user
 version - Displays the version of uWelcome currently in use
 ```
+
+## AI usage
+
+This project had mild AI involvement back when it was one with umotd, mainly for auto-completion in the code editor - nowadays it's being barely developped with any AI at all, and most content is written by hand (for practice and fun).
+
+Due to past AI involvement, I give this project the following rating
+
+[![REAL AI Rating - Level 3 "Moderate AI"](docs/ai-rating.png)](https://www.realgoodai.org/real-rating)
