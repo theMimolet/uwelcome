@@ -12,11 +12,9 @@ Want to configure or contribute to uWelcome ? Take a look at the [documentation]
 
 Here are features that are planned for the future:
 
-- Add CLI commands to customize the banner without touching the config file itself
-- Shows a warning if the installed system image is over a certain amount of time (e.g. one month - configurable)
-- Shows a warning if the installed system image is unverified (could be disabled via configuration)
-
-> Both are already done in Bazzite, so it's only a matter of porting them over to uWelcome.
+- Config option for the welcome message - to make it customizable [0.3.2]
+- System commands that always displays a message following a script or such (not randomized) [0.3.3]
+- Add CLI commands to customize the banner without touching the config file itself [0.4]
 
 ## How to try
 
