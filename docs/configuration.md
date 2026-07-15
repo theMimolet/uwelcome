@@ -19,6 +19,45 @@ Any other option not listed won't be translated.
 
 Here's a breakdown of the config file options - there's also the example folder if you want to see concrete use cases.
 
+## Greeting
+
+These options allow to customize the welcome message.
+You can just add a prefix and a suffix to the existing localized welcome message, but you can also add a fully custom message.
+
+This :
+
+```json
+{
+  "greeting": {
+    "prefix": "> ",
+    "suffix": " !"
+  }  
+}
+```
+
+would result in :
+
+```txt
+> Welcome to Bluefin !
+```
+
+And this :
+
+```json
+{
+  "greeting": {
+    "suffix": " :D",
+    "message": "Booper dooper"
+  }
+}
+```
+
+would result in :
+
+```txt
+Booper dooper :D
+```
+
 ## Commands
 
 This option allows you to define a list of commands to display in the banner.
@@ -52,6 +91,25 @@ Here are the unique codes you can use to get translated strings for command desc
       "desc": "Display a cow saying something"
     }
   ]
+}
+```
+
+## Motd
+
+The `motd` option allows to add messages to the banner !
+They will get chosen at random and can both be straight up messages or the result of commands.
+
+```json
+{
+  "motd": {
+    "messages" : [
+      "This is a custom tip by yours truly ! :D",
+      "This is another custom tip (they won't get translated)"
+    ],
+    "commands" : [
+      "umotd"
+    ]
+  }
 }
 ```
 
@@ -102,42 +160,6 @@ There are unique names you can use to get a translated name for the link :
 }
 ```
 
-## Prefix and Suffix
-
-These options allow to customize the prefix and suffix of the welcome message.
-
-```json
-{
-  "prefix": "> ",
-  "suffix": " !"
-}
-```
-
-Example:
-
-```txt
-> Welcome to Bluefin !
-```
-
-## Motd
-
-The `motd` option allows to add messages to the banner !
-They will get chosen at random and can both be straight up messages or the result of commands.
-
-```json
-{
-  "motd": {
-    "messages" : [
-      "This is a custom tip by yours truly ! :D",
-      "This is another custom tip (they won't get translated)"
-    ],
-    "commands" : [
-      "umotd"
-    ]
-  }
-}
-```
-
 ## Color
 
 This option allows the banner to use an accent color.
@@ -154,7 +176,7 @@ Here are all the different options:
 - `green`
 - `orange`
 - `pink`
-- `puple`
+- `purple`
 - `red`
 - `slate`
 - `teal`

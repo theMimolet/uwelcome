@@ -31,7 +31,9 @@
       "url": "https://docs.projectbluefin.io/"
     }
   ],
-  "prefix": "󱍢 ",
+  "greeting": {
+    "prefix": "󱍢 "
+  },
   "motd": {
     "commands": [
       "umotd"

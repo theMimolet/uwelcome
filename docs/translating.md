@@ -13,7 +13,7 @@ To translate and test uWelcome, you'll need to have the following tools installe
 
 You can simply run the `translators.sh` script to extract the translatable strings and update the translations files.
 
-```
+```sh
 ./translators.sh <language code>
 ```
 

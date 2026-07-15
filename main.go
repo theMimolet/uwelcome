@@ -17,7 +17,7 @@ import (
 	"github.com/leonelquinteros/gotext"
 )
 
-const VERSION = "0.3.1"
+const VERSION = "0.3.2"
 
 //go:embed all:locales
 var localesFS embed.FS
@@ -40,6 +40,7 @@ func main() {
 			fmt.Println(VERSION)
 			return
 
+		// Toggles the banner
 		case "toggle":
 			if isDisabled {
 				state.Enable(l)
@@ -68,6 +69,7 @@ func main() {
 				state.Disable(l)
 				return
 			}
+
 		// Returns the path to the current file
 		case "config-path":
 			fmt.Println(config.GetPath())
@@ -79,15 +81,29 @@ func main() {
 	}
 
 	// Exits if the banner is disabled
+
 	if isDisabled {
 		os.Exit(0)
 	}
 
 	// Loads the configuration from the system's config file
+
 	cfg := config.GetConfig()
 
-	// Gets the image info and OS name
-	in := "# " + cfg.Prefix + l.Get("Welcome to %s", system.GetOSName()) + cfg.Suffix + "\n"
+	// Greets the user
+
+	in := "# " + cfg.Greeting.Prefix
+
+	if len(cfg.Greeting.Message) > 0 {
+		in += cfg.Greeting.Message
+	} else {
+		in += l.Get("Welcome to %s", system.GetOSName())
+	}
+
+	in += cfg.Greeting.Suffix + "\n"
+
+	// Gets the image info
+
 	if imageInfo := system.GetImageInfo(); imageInfo.ImageRef != "" || imageInfo.ImageTag != "" {
 		in += " " + symbols.GetSymbol("oci") + " `" + imageInfo.ImageRef + ":" + imageInfo.ImageTag + "` \n"
 	} else if system.IsBootcSystem() {
@@ -95,6 +111,7 @@ func main() {
 	}
 
 	// Gets the Greenboot status
+
 	if greenboot := system.GetGreenbootInfo(); greenboot != "" {
 		in += "\n " + symbols.GetSymbol("boot") + " " + l.Get("Boot Status") + ":"
 		if greenboot == "healthy" {
@@ -106,6 +123,7 @@ func main() {
 	}
 
 	// Command list
+
 	if len(cfg.Commands) > 0 {
 		in += " | " + symbols.GetSymbol("command_palette") + " " + l.Get("Command") + " | " + l.Get("Description") + " | \n"
 		in += "| ------------ | ----------- |\n"
@@ -132,11 +150,13 @@ func main() {
 	}
 
 	// Gets a random tip
+
 	if len(cfg.Motd.Messages) > 0 || len(cfg.Motd.Commands) > 0 {
 		in += motd.GetRandomMessage(cfg) + "\n\n"
 	}
 
 	// Gets the links
+
 	if len(cfg.Links) > 0 {
 		var linkSb strings.Builder
 		for _, link := range cfg.Links {
@@ -159,8 +179,6 @@ func main() {
 				link.Name = symbols.GetSymbol("mastodon") + " [" + l.Get("Mastodon") + "]"
 			case "donate":
 				link.Name = symbols.GetSymbol("donate") + " [" + l.Get("Donate") + "]"
-			case "link":
-				link.Name = symbols.GetSymbol("link") + " [" + link.Name + "]"
 			default:
 				link.Name = symbols.GetSymbol("link") + " [" + link.Name + "]"
 			}
@@ -171,5 +189,6 @@ func main() {
 	}
 
 	// Renders the output
+
 	fmt.Print(render.GetRender(cfg.Color, in))
 }

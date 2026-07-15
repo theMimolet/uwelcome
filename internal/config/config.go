@@ -10,9 +10,8 @@ import (
 
 type Config struct {
 	Commands []Command `json:"commands"`
+	Greeting Greeting  `json:"greeting"`
 	Links    []Link    `json:"links"`
-	Prefix   string    `json:"prefix"`
-	Suffix   string    `json:"suffix"`
 	Motd     Motd      `json:"motd"`
 	Color    string    `json:"color"`
 }
@@ -20,6 +19,12 @@ type Config struct {
 type Command struct {
 	Cmd  string `json:"cmd"`
 	Desc string `json:"desc"`
+}
+
+type Greeting struct {
+	Prefix  string `json:"prefix"`
+	Suffix  string `json:"suffix"`
+	Message string `json:"message"`
 }
 
 type Link struct {
@@ -45,7 +50,9 @@ func defaultConfig() Config {
 			{Name: "discord", URL: "https://discord.com/invite/8RZGC3uFzA"},
 			{Name: "mastodon", URL: "https://fosstodon.org/@UniversalBlue"},
 		},
-		Suffix: " !",
+		Greeting: Greeting{
+			Suffix: " !",
+		},
 	}
 }
 
